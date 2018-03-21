@@ -23,10 +23,28 @@ if (!defined('ABSPATH')) {
 if (!class_exists('optimizaBlogging')) {
     class optimizaBlogging
     {
+
+        private $preview;
+
         public function __construct()
         {
+            spl_autoload_register([$this, 'autoload']);
+            $this->preview = new previewPostsWP();
+
             add_action( 'wp_head', [$this,'includeGandalf' ]);
             add_action( 'is_protected_meta', [$this, 'allowMetaFieldsInPostRequest'], 10, 2);
+
+            add_action( 'rest_api_init', [$this->preview,'getPreviewURL' ]);
+        }
+
+        public function autoload()
+        {
+            $classes = glob(plugin_dir_path(__FILE__) . 'classes' . '/*.*');
+            foreach ($classes as $class) {
+                if (file_exists($class)) {
+                    require_once $class;
+                }
+            }
         }
 
         public function includeGandalf() {
