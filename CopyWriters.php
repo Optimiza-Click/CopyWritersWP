@@ -20,12 +20,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!class_exists('optimizaBlogging')) {
-    class optimizaBlogging
+if (!class_exists('copyWriters')) {
+    class copyWriters
     {
-
-        private $preview;
-
         public function __construct()
         {
             spl_autoload_register([$this, 'autoload']);
@@ -55,5 +52,5 @@ if (!class_exists('optimizaBlogging')) {
             }
         }
     }
-    new optimizaBlogging();
+    new copyWriters();
 }
