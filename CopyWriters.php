@@ -7,7 +7,7 @@
  */
 
 /*
-Plugin Name: OptimizaBlogging
+Plugin Name: CopyWritersWp
 Plugin URI: https://www.optimizaclick.com/
 Description: Include gandalfJS script to tracking analytics events and allow protected meta
 Author: David
