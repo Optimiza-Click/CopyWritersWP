@@ -18,8 +18,19 @@ class restEndpointApi
             'methods' => 'POST',
             'callback' => [$this, 'updateSEOMetasByPlugin'],
         ]);
+
+        register_rest_route('blogging/v1', '/seo_meta/', [
+            'methods' => 'GET',
+            'callback' => [$this, 'getSeoMetas'],
+        ]);
     }
 
+
+    public function getSeoMetas($params) {
+       $id =  $params->get_param('id');
+
+       return isset($id) ?  get_post_meta($id, '', false) : ['success' => false];
+    }
 
     private function transformMetaByWpSeoPlugin($name) {
         $pluginList = get_option( 'active_plugins' );
