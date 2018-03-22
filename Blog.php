@@ -32,7 +32,7 @@ if (!class_exists('optimizaBlogging')) {
             add_action( 'wp_head', [$this,'includeGandalf' ]);
             add_action( 'is_protected_meta', [$this, 'allowMetaFieldsInPostRequest'], 10, 2);
 
-            add_action( 'rest_api_init', [new restPostPreview(),'getPreviewURL' ]);
+            add_action( 'rest_api_init', [new restEndpointApi(),'restEndpointsURLs' ]);
         }
 
         public function autoload()
