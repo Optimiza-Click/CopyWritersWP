@@ -29,7 +29,7 @@ if (!class_exists('optimizaBlogging')) {
         public function __construct()
         {
             spl_autoload_register([$this, 'autoload']);
-            $this->preview = new previewPostsWP();
+            $this->preview = new restPostPreview();
 
             add_action( 'wp_head', [$this,'includeGandalf' ]);
             add_action( 'is_protected_meta', [$this, 'allowMetaFieldsInPostRequest'], 10, 2);
