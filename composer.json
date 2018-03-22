@@ -1,0 +1,11 @@
+{
+  "name": "optimiza/optimiza-blogging",
+  "description": "Arya Helper",
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.4.16"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*"
+  }
+}
