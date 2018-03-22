@@ -15,7 +15,7 @@ class restEndpointApi
         ]);
 
         register_rest_route('blogging/v1', '/seo_meta/', [
-            'methods' => 'GET',
+            'methods' => 'POST',
             'callback' => [$this, 'updateSEOMetasByPlugin'],
         ]);
     }
