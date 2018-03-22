@@ -39,7 +39,8 @@ class restEndpointApi
             'Yoast' => [
                 'dir' => 'wordpress-seo/wp-seo.php',
                 'seo_title' => '_yoast_wpseo_title',
-                'seo_description' => '_yoast_wpseo_metadesc'
+                'seo_description' => '_yoast_wpseo_metadesc',
+                'seo_keywords' => '_yoast_wpseo_focuskw',
                 ],
             'AllInOne' => [
                 'dir' => 'all-in-one-seo-pack/all_in_one_seo_pack.php',
@@ -56,6 +57,8 @@ class restEndpointApi
                         return $seoPlugin['seo_title'];
                     case 'seo_description':
                         return $seoPlugin['seo_description'];
+                    case 'seo_keywords':
+                        return $seoPlugin['seo_keywords'];
                 }
             }
         }
