@@ -1,6 +1,6 @@
 <?php
 
-class DS_Public_Post_Preview {
+class draftPostPreview {
 
 	public static function init() {
 		add_action( 'transition_post_status', array( __CLASS__, 'unregister_public_preview_on_status_change' ), 20, 3 );
@@ -202,4 +202,4 @@ class DS_Public_Post_Preview {
 	}
 }
 
-add_action( 'plugins_loaded', array( 'DS_Public_Post_Preview', 'init' ) );
+add_action( 'plugins_loaded', array( 'draftPostPreview', 'init' ) );

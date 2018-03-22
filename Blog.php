@@ -29,12 +29,10 @@ if (!class_exists('optimizaBlogging')) {
         public function __construct()
         {
             spl_autoload_register([$this, 'autoload']);
-            $this->preview = new restPostPreview();
-
             add_action( 'wp_head', [$this,'includeGandalf' ]);
             add_action( 'is_protected_meta', [$this, 'allowMetaFieldsInPostRequest'], 10, 2);
 
-            add_action( 'rest_api_init', [$this->preview,'getPreviewURL' ]);
+            add_action( 'rest_api_init', [new restPostPreview(),'getPreviewURL' ]);
         }
 
         public function autoload()

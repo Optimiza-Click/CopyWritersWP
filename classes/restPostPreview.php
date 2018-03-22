@@ -16,9 +16,8 @@ class restPostPreview
     }
 
     public function generatePreviewUrl($params) {
-        $preview = new DS_Public_Post_Preview();
-
         update_option('public_post_preview', [$params->get_param('id')]);
-        return ['url' => $preview->get_preview_link(get_post($params->get_param('id')))];
+
+        return ['url' => draftPostPreview::get_preview_link(get_post($params->get_param('id')))];
     }
 }
